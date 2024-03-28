@@ -213,9 +213,9 @@ a:hover { /*link element styling when hovering */
   .icon {
     cursor: pointer;
     height: 2rem;
-    margin-right: 0.5rem; /* Adjust as needed */
+    /* margin-right: 0.5rem; 
     margin-left: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 1rem; */
   }
 
   /*BUTTONS */
