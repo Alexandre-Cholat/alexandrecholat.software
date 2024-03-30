@@ -104,7 +104,7 @@ nav {
 a { /*link element styling*/
     color: black;
     text-decoration: none;
-    text-decoration-color: white;
+    text-decoration-color: lightcoral;
 }
 
 a:hover { /*link element styling when hovering */
@@ -155,7 +155,8 @@ a:hover { /*link element styling when hovering */
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: white;
+    /* background-color: white; */
+    
     width: fit-content;
     max-height: 0;
     overflow: hidden;
@@ -164,10 +165,14 @@ a:hover { /*link element styling when hovering */
   
   .menu-links a {
     display: block;
-    padding: 10px;
+    padding: 3px;
     text-align: center;
     font-size: 1.5rem;
     color: black;
+    /* font-family: "Rubik", sans-serif;
+    font-weight: 900; */
+    font-family: "Rubik Lines", system-ui;
+    font-weight: 400;
     text-decoration: none;
     transition: all 0.3 ease-in-out;
   }
@@ -317,7 +322,7 @@ a:hover { /*link element styling when hovering */
   }
   
   .btn-color-2:hover {
-    border: rgb(255, 255, 255) 0.1rem solid;
+    border: lightgrey 0.1rem solid;
   }
   
   .btn-container {
@@ -433,10 +438,11 @@ a:hover { /*link element styling when hovering */
   #projects {
     position: relative;
   }
+  /*removal of border for asthetic reasons*/
 
   .color-container {
-    border-color: rgb(163,163,163);
-    background: var(--accent-color);
+    /* border-color: rgb(163,163,163);
+    background: var(--accent-color); */
   }
 
   .project-img {
@@ -452,7 +458,8 @@ a:hover { /*link element styling when hovering */
 
   .project-btn {
     color: black;
-    border-color: rgb(163,163,163);
+    /* border-color: rgb(163,163,163); */
+    border-color: black;
   }
 
   /*CONTACT */
