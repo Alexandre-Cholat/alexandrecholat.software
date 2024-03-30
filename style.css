@@ -1,30 +1,84 @@
 /* GENERAL STYLING */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap')
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&display=swap') */
 
 
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Broken+Fax&family=Rubik+Doodle+Shadow&family=Rubik+Lines&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*added styling*/
+/* h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  
+} */
+
+/* h1 {
+  font-family: "Rubik Broken Fax", system-ui;
+  font-weight: 400;
+} */
+:root {
+  --primary-color: rgb(255, 111, 97); /* Coral */
+  --secondary-color: rgb(107, 91, 149); /* Deep Lavender */
+  --accent-color: rgb(255, 230, 109); /* Light Yellow */
+  --background-color: rgb(240, 240, 240); /* Light Gray */
+  --text-color: rgb(51, 51, 51); /* Dark Gray */
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    font-family: "Poppins", sans-serif;  
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  
 }
 
+/* First page with navy blue gradient background */
+body.first-page {
+  background: linear-gradient(to bottom, #5B92E5, #426AAB, #27416E, #1D2A4A); /* Navy blue gradient */
+  color: white; /* Text color */
+}
+
+/* After the first page, transition to a natural pastel gradient background with greys and lighter blues */
+body:not(.first-page) {
+  background: linear-gradient(to bottom right, #C1D4F9, #A3BCF4, #B8B8B8, #8D8D8D); /* Natural pastel gradient background with greys and lighter blues */
+  color: #333333; /* Text color */
+}
+
+
+
+
+
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 p {
-    color: rgb(85, 85, 85);
+  color: rgb(85, 85, 85);
+  
 }
 /* TRANSITION */
 
-a, .btn {
+a, 
+.btn {
     transition: all 300ms ease;
+}
+
+a {
+  font-family: "Rubik Lines", system-ui;
+  font-weight: 400;
+  font-size: 1.5rem;
+  
 }
 
 /*DESKTOP NAV*/
@@ -42,7 +96,7 @@ nav {
 }
 
 .nav-links {
-    gap: 1.5rem; /*gap between different pages of nav*/
+    gap: 2rem; /*gap between different pages of nav*/
     list-style: none;
     font-size: 1.5rem;
 }
@@ -60,8 +114,10 @@ a:hover { /*link element styling when hovering */
     text-decoration-color: rgb(181, 181, 181);
 }
 
-.logo { /* logo size*/
-    font-size: 2rem;
+.logo {
+    font-size: 3rem;
+    font-family: "Rubik Broken Fax", system-ui;
+    font-weight: 400;
 }
 
 .logo:hover {
@@ -173,9 +229,9 @@ a:hover { /*link element styling when hovering */
 
   .section__pic-container {
     display: flex;
-    height: 500px;
+    height: 600px;
     margin: auto 0;
-    width: 500px;
+    width: 600px;
   }
 
   .section__text {
@@ -189,6 +245,8 @@ a:hover { /*link element styling when hovering */
 
   .section__text__p1 {
     text-align: center;
+    font-weight: 500;
+    
   }
 
   .section__text__p2 {
@@ -300,7 +358,7 @@ a:hover { /*link element styling when hovering */
     bottom: 2.5rem;
   }
 
-  .details-container {
+  /* .details-container {
     padding: 1.5rem;
     flex: 1;
     background: white;
@@ -308,8 +366,16 @@ a:hover { /*link element styling when hovering */
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163,163,163);
     text-align: center;
-  }
-
+  } */
+/*chatgpt version*/
+.details-container {
+  padding: 1.5rem;
+  flex: 1;
+  background: transparent; /* Transparent background */
+  border-radius: 2rem;
+  border: 3px solid rgba(0, 0, 0, 0.1); /* Soft border */
+  text-align: center;
+}
   .section-container { /*picture styling*/
     gap: 4rem;
     height: 80%;
@@ -420,6 +486,11 @@ a:hover { /*link element styling when hovering */
 
   .contact-info-container p {
     font-size: larger;
+  }
+
+  .contact-info-container a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
   }
 
   /* icon is not a link so we have to make cursor stay default so
