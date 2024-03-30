@@ -25,10 +25,10 @@
   font-weight: 400;
 } */
 :root {
-  --primary-color: rgb(255, 111, 97); /* Coral */
-  --secondary-color: rgb(107, 91, 149); /* Deep Lavender */
-  --accent-color: rgb(255, 230, 109); /* Light Yellow */
-  --background-color: rgb(240, 240, 240); /* Light Gray */
+  --primary-color: #A3BCF4; /* Coral */
+  --secondary-color: #1D2A4A; /* Deep Lavender */
+  --accent-color: #A3BCF4; /* Light Yellow */
+  --background-color: #8D8D8D; /* Light Gray */
   --text-color: rgb(51, 51, 51); /* Dark Gray */
 }
 
@@ -385,7 +385,7 @@ a:hover { /*link element styling when hovering */
   .section__pic-container {
     height: 400px;
     width: 400px;
-    margin: auto 0;
+    margin: auto 0; /* Adjust the top margin to move the picture higher */
   }
 
   /*EXPERIENCE SECTION*/
@@ -436,7 +436,7 @@ a:hover { /*link element styling when hovering */
 
   .color-container {
     border-color: rgb(163,163,163);
-    background: rgb(250, 250, 250);
+    background: var(--accent-color);
   }
 
   .project-img {
@@ -471,7 +471,7 @@ a:hover { /*link element styling when hovering */
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
-    background: rgb(250, 250, 250);
+    background: var(--background-color);
     margin: 2rem auto;
     padding: 0.5rem;
   }

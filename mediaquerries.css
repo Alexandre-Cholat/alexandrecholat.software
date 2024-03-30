@@ -100,4 +100,9 @@
     .text-container {
       text-align: justify;
     }
+
+    .contact-info-container a {
+      font-size: 0.9rem;
+    }
+
   }
