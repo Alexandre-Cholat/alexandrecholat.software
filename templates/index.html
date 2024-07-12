@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AC Portfolio</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/mediaquerries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Alexandre Cholat</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <!-- This makes the different website pages -->
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Alexandre Cholat</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+    <section id="profile">
+      <div class="section__pic-container">
+        <img
+          src="../static/assets/Circle crop profile pic.png"
+          alt="Alexandre Cholat profile picture"
+        />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello I'm</p>
+        <h1 class="title">Alexandre Cholat</h1>
+        <p class="section__text__p2">MIASHS Student</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('../static/assets/CV Alexandre Cholat.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href ='./#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-containers">
+          <img
+            src="../static/assets/linkedin.png"
+            alt="My LinkedIn Profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/alexandre-cholat-88a97a1aa/'"
+          />
+          <img
+            src="../static/assets/github.png"
+            alt="My Github"
+            class="icon"
+            onclick="location.href='https://github.com/Alexandre-Cholat/Alexandre-Cholat/tree/main'"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get to Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="../static/assets/italy-profile-pic-linkedin.jpg"
+            alt="profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="../static/assets/language-png-high-resolution.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Languages</h3>
+              <p>French, English, Spanish</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="../static/assets/education.png"
+                alt="education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>Université Grenoble Alpes</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              Welcome to my website. I'm studying Math, Computer Science, and
+              Cognitve Science. I'm working to apply my studies to real-world
+              projects through internships and bootstrapped entrepreneurship.
+              Don't hesitate to reach out to me with any inquiries concerning my
+              Web Development and Digital Marketing services.
+              <br />
+              <br />
+              Check out what I've been working on, and feel free to reach out to
+              me to collaborate!
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="../static/assets/arrow.png"
+        alt="arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#services'"
+      />
+    </section>
+    <section id="services">
+      <p class="section__text__p1">Explore my</p>
+      <h1 class="title">Services</h1>
+
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Web Development</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="../static/assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>HTML / CSS</h3>
+                  <p>Own your code, escape vendor lock-in</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="../static/assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>UI/UX Design</h3>
+                  <p>Intuitive interfaces</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="../static/assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>AI Tools</h3>
+                  <p>Custom assistants and RAG</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="../static/assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Connect APIs</h3>
+                  <p>Integrate third-party software</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="../static/assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Hosting</h3>
+                  <p>Connect your domain</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="../static/assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Mobile First</h3>
+                  <p>Mobile optimisiation</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Digital Marketing</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="../static/assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Social Media</h3>
+                  <p>Get organic web traffic</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="../static/assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Advertising</h3>
+                  <p>Targeted campaigns</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="../static/assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Analytics</h3>
+                  <p>Understand your users</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="../static/assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Content</h3>
+                  <p>Create effective media</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="../static/assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Local SEO</h3>
+                  <p>Rank higher in local search</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="../static/assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>CRO</h3>
+                  <p>Increase % of desired action</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="../static/assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      />
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Personal</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="../static/assets/1to1victorian-moving-truck-cinematic.jpg"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Gentleman Moving</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://gentlemanmoving.com'"
+              >
+                Website
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href ='https://gentlemanmoving.com/Contact.html'"
+              >
+                Estimate
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="../static/assets/sailing-lisbonne-2023_IMG.jpg"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Adventures</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://www.youtube.com/channel/UC0qXC1bQ7giQ2TzQpUPz-eQ'"
+              >
+                YouTube
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://www.instagram.com/alexandre.cholat/'"
+              >
+                Instagram
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="../static/assets/plantes_IMG.jpg"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Volunteering</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://sites.sgdf.fr/'"
+              >
+                SGDF
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://unjardinsansfrontieres.wordpress.com/'"
+              >
+                JSF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="../static/assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="../static/assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p>
+            <a href="mailto:alexandrecholat5@gmail.com">
+              alexandrecholat5@gmail.com
+            </a>
+          </p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="../static/assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p>
+            <a href="https://www.linkedin.com/in/alexandre-cholat-88a97a1aa/">
+              LinkedIn
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="questions">
+      <p>Any questions?</p>
+
+      <div>
+        <label for="user-query"><h1>Shoot me a message:</h1></label><br />
+
+        <form id="contact-form">
+          <!-- To simplify the tutorial, the value is static. -->
+          <input type="hidden" name="contact_number" value="123456" />
+
+          <label for="user_name">Name</label>
+          <input type="text" id="user_name" name="user_name" required />
+
+          <label for="user_email">Email</label>
+          <input type="email" id="user_email" name="user_email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <input class="btn btn-color-1" type="submit" value="Send" />
+        </form>
+      </div>
+      <div id="query-response"></div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Project</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Alexandre Cholat. All Rights Reserved.</p>
+    </footer>
+    <script src="/static/script.js"></script>
+    <!-- contact form -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        // Initialize EmailJS with your public API key
+        emailjs.init("FdvfO7Zjdtdvpo9hj");
+      })();
+
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Send form data using EmailJS
+            emailjs
+              .sendForm(
+                "service_lh-test1",
+                "contact_form",
+                this // 'this' refers to the form element
+              )
+              .then(
+                function (response) {
+                  console.log("SUCCESS!", response.status, response.text);
+                  alert("Message sent successfully!");
+                },
+                function (error) {
+                  console.log("FAILED...", error);
+                  alert("Message sending failed. Please try again later.");
+                }
+              );
+          });
+      };
+    </script>
+  </body>
+</html>

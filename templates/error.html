@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Page</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/mediaquerries.css" />
+  </head>
+  <body>
+    <section id="profile">
+      <div class="section__text">
+        <h1 class="title">Oops-- Looks like you got lost buddy!</h1>
+        <p>Just kidding, let me know and I will fix it ;)<br /></p>
+        <button
+          class="btn btn-color-2"
+          onclick="window.location.href='index.html'"
+        >
+          Go Back
+        </button>
+
+        <!-- this creates an alert button giving user choice to leave page -->
+        <button id="leaveButton" class="btn btn-color-2">Get Moving...</button>
+        <script>
+          document
+            .getElementById("leaveButton")
+            .addEventListener("click", function () {
+              if (
+                confirm(
+                  "Are you sure you want to leave?\n We are gonna miss you!"
+                )
+              ) {
+                window.location.href = "https://gentlemanmoving.com";
+              }
+            });
+        </script>
+      </div>
+    </section>
+  </body>
+</html>
