@@ -52,7 +52,23 @@
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello I'm</p>
-        <h1 class="title">Alexandre Cholat</h1>
+        <h1 class="title animate-text">Alexandre Cholat</h1>
+        <style>
+          @keyframes slideInRight {
+            0% {
+              opacity: 0;
+              transform: translateX(100%);
+            }
+            100% {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          .animate-text {
+            animation: slideInRight 2s ease-in-out;
+          }
+        </style>
         <p class="section__text__p2">MIASHS Student</p>
         <div class="btn-container">
           <button
@@ -85,13 +101,13 @@
       <p class="section__text__p1">Get to Know More</p>
       <h1 class="title">About Me</h1>
       <div class="section-container">
-        <div class="section__pic-container">
+        <!-- <div class="section__pic-container">
           <img
             src="../static/assets/standing-me-pic.jpg"
             alt="profile picture"
             class="about-pic"
           />
-        </div>
+        </div> -->
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
