@@ -215,7 +215,7 @@ a:hover { /*link element styling when hovering */
     padding-top: 4vh;
     height: 96vh;
     box-sizing: border-box;
-    margin: 0 10rem;
+    margin: 0 15rem;
     min-height: fit-content;
   }
 
@@ -476,12 +476,14 @@ a:hover { /*link element styling when hovering */
   } */
 /*chatgpt version*/
 .details-container {
-  padding: 1.5rem;
+  /* reduced padding and lighter border to take up less vertical space */
+  padding: 0.9rem;
   flex: 1;
   background: transparent; /* Transparent background */
-  border-radius: 2rem;
-  border: 3px solid rgba(0, 0, 0, 0.1); /* Soft border */
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.06); /* softer, thinner border */
   text-align: center;
+  transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
   /* Education-specific tweaks can be added later here if needed */
@@ -557,6 +559,7 @@ a:hover { /*link element styling when hovering */
   #experience { 
     position: relative;
   }
+
 
   .experience-sub-title {
     color: rgb(85, 85, 85);
@@ -764,46 +767,141 @@ a:hover { /*link element styling when hovering */
     text-align: center;
   }
 
-/* Center the question submission section on the page */
+/* Modern questions / contact form styles */
 #questions {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Use 100% of the viewport height */
-  text-align: center;
+  padding: 6vh 1rem;
+  min-height: 60vh;
 }
 
-/* Style the form container */
-#contact-form {
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+.questions-inner {
   width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* Style the label */
-#contact-form label {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  display: block; /* Ensure labels are block-level */
+.questions-hero {
+  padding: 0.5rem 1rem;
 }
 
-/* Style the input fields and textarea */
-#user_name, #user_email, #message {
+.questions-hero .title {
+  text-align: left;
+  font-size: 2rem;
+  margin: 0.25rem 0 0.5rem 0;
+  color: var(--secondary-color);
+}
+
+.questions-hero .section__text__p1 {
+  text-align: left;
+  color: rgb(85,85,85);
+  font-weight: 600;
+}
+
+.questions-hero .questions-sub {
+  color: rgb(85,85,85);
+  margin-top: 0.5rem;
+
+}
+
+.contact-card {
+  background: transparent; /* inner card sits on the glass panel */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-card label {
+  font-size: 0.95rem;
+  color: rgb(60,60,60);
+  display: block;
+}
+
+.contact-card input[type="text"],
+.contact-card input[type="email"],
+.contact-card textarea {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; /* Ensure padding doesn't affect the total width */
+  padding: 0.9rem 1rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.6rem;
+  border: 1px solid rgba(29,42,74,0.08);
+  border-radius: 12px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  background: rgba(255,255,255,0.9);
 }
 
+.contact-card textarea {
+  resize: vertical;
+  min-height: 120px;
+}
 
-/* Style the query response div */
+.contact-card input:focus,
+.contact-card textarea:focus {
+  outline: none;
+  box-shadow: 0 6px 18px rgba(67,112,237,0.08);
+  border-color: var(--primary-color);
+}
+
+.contact-card .btn {
+  width: 10rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  align-self: flex-start;
+  font-weight: 700;
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+}
+
+.contact-card .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(29,42,74,0.12);
+}
+
 #query-response {
-  margin-top: 20px;
-  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.response--success {
+  color: #065f46; /* emerald */
+  background: rgba(4,120,87,0.06);
+  border-left: 4px solid #10b981;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.response--error {
+  color: #7f1d1d; /* dark red */
+  background: rgba(239,68,68,0.06);
+  border-left: 4px solid #ef4444;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .questions-inner {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+
+  .questions-hero .title {
+    font-size: 1.5rem;
+  }
+
+  .contact-card .btn {
+    width: 100%;
+  }
 }

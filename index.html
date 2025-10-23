@@ -19,7 +19,7 @@
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
           <!-- This makes the different website pages -->
@@ -36,7 +36,7 @@
         </div>
         <div class="menu-links">
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
@@ -178,12 +178,12 @@
         src="../static/assets/arrow.png"
         alt="arrow icon"
         class="icon arrow"
-        onclick="location.href='./#services'"
+        onclick="location.href='./#skills'"
       />
     </section>
-    <section id="services">
+    <section id="skills">
       <p class="section__text__p1">Explore my</p>
-      <h1 class="title">Skills</h1>
+      <h1 class="title">Technical Skills</h1>
 
       <div class="experience-details-container">
         <div class="about-containers">
@@ -324,19 +324,22 @@
                 />
                 <div>
                   <h3>Context Pipelines</h3>
-                  <p>Prompt Chaining, CoT Reasoning</p>
+                  <p>Prompt Chaining, CoT</p>
                 </div>
               </article>
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="../static/assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
+      <div style="text-align: center; margin-top: 20px">
+        <!-- <img
+          src="../static/assets/arrow.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          style="cursor: pointer"
+          onclick="location.href='./#projects'"
+        /> -->
+      </div>
     </section>
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
@@ -536,34 +539,56 @@
       </div>
     </section>
     <section id="questions">
-      <p>Any questions?</p>
+      <div class="questions-inner">
+        <div class="questions-hero">
+          <p class="section__text__p1">Any questions?</p>
+          <h1 class="title">Shoot me a message:</h1>
+          <p class="questions-sub">
+            I usually reply within a few days — feel free to reach out about
+            projects, internships, or collaborations.
+          </p>
+          <p class="follow-cta">
+            Prefer social updates?
+            <a
+              href="https://www.linkedin.com/in/alexandre-cholat/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Follow me on LinkedIn</a
+            >
+            for project updates and posts.
+          </p>
+        </div>
 
-      <div>
-        <label for="user-query"><h1>Shoot me a message:</h1></label><br />
+        <div>
+          <form
+            id="contact-form"
+            class="contact-card"
+            aria-label="Contact form"
+          >
+            <input type="hidden" name="contact_number" value="123456" />
 
-        <form id="contact-form">
-          <input type="hidden" name="contact_number" value="123456" />
+            <label for="user_name">Name</label>
+            <input type="text" id="user_name" name="user_name" required />
 
-          <label for="user_name">Name</label>
-          <input type="text" id="user_name" name="user_name" required />
+            <label for="user_email">Email</label>
+            <input type="email" id="user_email" name="user_email" required />
 
-          <label for="user_email">Email</label>
-          <input type="email" id="user_email" name="user_email" required />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
+            <button class="btn" type="submit">Send</button>
+          </form>
 
-          <input class="btn btn-color-1" type="submit" value="Send" />
-        </form>
+          <div id="query-response" role="status" aria-live="polite"></div>
+        </div>
       </div>
-      <div id="query-response"></div>
     </section>
     <footer>
       <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Project</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -584,29 +609,39 @@
       })();
 
       window.onload = function () {
-        document
-          .getElementById("contact-form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent default form submission
+        const form = document.getElementById("contact-form");
+        const responseEl = document.getElementById("query-response");
 
-            // Send form data using EmailJS
-            emailjs
-              .sendForm(
-                "service_lh-test1",
-                "contact_form",
-                this // 'this' refers to the form element
-              )
-              .then(
-                function (response) {
-                  console.log("SUCCESS!", response.status, response.text);
-                  alert("Message sent successfully!");
-                },
-                function (error) {
-                  console.log("FAILED...", error);
-                  alert("Message sending failed. Please try again later.");
-                }
-              );
-          });
+        form.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          // Clear previous message
+          responseEl.textContent = "";
+          responseEl.className = "";
+
+          // Send form data using EmailJS
+          emailjs
+            .sendForm(
+              "service_lh-test1",
+              "contact_form",
+              this // 'this' refers to the form element
+            )
+            .then(
+              function (response) {
+                console.log("SUCCESS!", response.status, response.text);
+                responseEl.textContent =
+                  "Thanks — your message was sent. I'll be in touch soon.";
+                responseEl.classList.add("response--success");
+                form.reset();
+              },
+              function (error) {
+                console.log("FAILED...", error);
+                responseEl.textContent =
+                  "Sorry — something went wrong. Please try again later or email me directly at alexandrecholat5@gmail.com.";
+                responseEl.classList.add("response--error");
+              }
+            );
+        });
       };
     </script>
   </body>
