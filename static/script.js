@@ -6,3 +6,6 @@ function toggleMenu() {
     icon.classList.toggle("open");
 
 }
+
+// Make project widgets clickable via data-url attribute.
+// widgets are no longer clickable as a whole; action buttons use inline onclick handlers.

@@ -335,6 +335,108 @@ a:hover { /*link element styling when hovering */
     position: relative;
   }
 
+  /* Polished about section layout and typography */
+  .about-details-container {
+    display: flex;
+    flex-direction: row; /* timeline left, text right */
+    align-items: flex-start;
+    gap: 2.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .about-containers {
+    flex: 0 0 38%; /* left column for cards */
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Keep the left column of small cards and a compact right prose column */
+  .about-containers {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Vertical timeline styles */
+  .timeline {
+    position: relative;
+    padding-left: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* vertical line */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 14px; /* aligns with .timeline-icon center */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(0,0,0,0.06);
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .timeline-icon {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(16,24,40,0.06);
+    border: 2px solid rgba(0,0,0,0.05);
+    flex: 0 0 44px;
+    margin-left: -6px; /* visually aligns with timeline line */
+  }
+
+  .timeline-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+
+  .timeline-title {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--secondary-color);
+  }
+
+  .timeline-body p {
+    margin: 0;
+    color: rgb(85,85,85);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 600px) {
+    .timeline {
+      padding-left: 1rem;
+    }
+
+    .timeline::before { left: 8px; }
+    .timeline-icon { width: 36px; height: 36px; margin-left: -4px; }
+  }
+
+  .text-container {
+    flex: 1 1 50%; /* allow text to grow but limit width below */
+    max-width: 52ch; /* keep measure readable (~52 characters) */
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1.25rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+    color: var(--text-color);
+    align-self: flex-start; /* don't stretch vertically */
+  }
+
   .about-containers {
     gap: 2rem;
     margin-top: 2rem;
@@ -381,10 +483,66 @@ a:hover { /*link element styling when hovering */
   border: 3px solid rgba(0, 0, 0, 0.1); /* Soft border */
   text-align: center;
 }
+
+  /* Education-specific tweaks can be added later here if needed */
+  /* tweak for the icon + heading inside cards */
+  .details-container .icon {
+    height: 3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .details-container h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+    color: var(--secondary-color);
+  }
+
+  .details-container p {
+    color: rgb(85,85,85);
+    font-size: 0.95rem;
+  }
+
+  /* subtle hover effect for cards */
+  .details-container:hover {
+    transform: translateY(-6px);
+    transition: transform 220ms ease;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+  }
   .section-container { /*picture styling*/
     gap: 4rem;
     height: 80%;
 
+  }
+
+  /* Responsive: stack columns on narrow screens */
+  @media (max-width: 960px) {
+    section {
+      margin: 0 2rem;
+    }
+
+    .about-details-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .about-containers {
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .about-containers .details-container {
+      flex: 1 1 48%;
+      margin-bottom: 0.75rem;
+    }
+
+    .text-container {
+      background: none;
+      padding: 0.75rem 0;
+      box-shadow: none;
+      max-width: 100%;
+    }
   }
 
   .section__pic-container {
@@ -439,12 +597,90 @@ a:hover { /*link element styling when hovering */
     position: relative;
     margin-top: 10rem; /* Add a top margin of 5rem */
   }
-  /*removal of border for asthetic reasons*/
-
-  .color-container {
-    /* border-color: rgb(163,163,163);
-    background: var(--accent-color); */
+  /* Project widgets: image left, content right on wide screens; stacked on mobile */
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
+
+  .project-widget {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0,0,0,0.06);
+    background: rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    text-decoration: none; /* in case anchors are used later */
+  }
+
+  .project-widget:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(16,24,40,0.08);
+  }
+
+  .project-image {
+    flex: 0 0 180px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.75rem;
+  }
+
+  .project-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .project-name {
+    font-size: 1.25rem;
+    margin: 0;
+    color: var(--secondary-color);
+  }
+
+  .project-desc {
+    margin: 0;
+    color: rgb(85,85,85);
+  }
+
+  .project-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .project-actions .btn {
+    padding: 0.6rem 0.9rem;
+    width: auto;
+  }
+
+  /* Responsive: stack image above content on small screens */
+  @media (max-width: 900px) {
+    .project-widget {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 1rem;
+    }
+
+    .project-image {
+      flex: none;
+      height: 200px;
+    }
+  }
+  /*removal of border for astetic reasons*/
 
   .project-img {
     border-radius: 2rem;
