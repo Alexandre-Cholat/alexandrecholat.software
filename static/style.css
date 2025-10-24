@@ -345,7 +345,7 @@ a:hover { /*link element styling when hovering */
   }
 
   .about-containers {
-    flex: 0 0 38%; /* left column for cards */
+    flex: 0 0 50%; /* left column for cards (equal half) */
     flex-direction: column;
     align-items: stretch;
   }
@@ -366,7 +366,6 @@ a:hover { /*link element styling when hovering */
     gap: 1rem;
   }
 
-  /* vertical line */
   .timeline::before {
     content: '';
     position: absolute;
@@ -427,14 +426,21 @@ a:hover { /*link element styling when hovering */
   }
 
   .text-container {
-    flex: 1 1 50%; /* allow text to grow but limit width below */
-    max-width: 52ch; /* keep measure readable (~52 characters) */
-    background: rgba(255, 255, 255, 0.6);
+    order: 2;
+    flex: 0 0 50%; /* equal column */
+    box-sizing: border-box; /* include padding in width so text won't overflow */
+    overflow-wrap: anywhere; /* break long tokens if necessary */
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: none;
+    background: rgba(255, 255, 255, 0.15);
     padding: 1.25rem;
     border-radius: 1rem;
     box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
     color: var(--text-color);
     align-self: flex-start; /* don't stretch vertically */
+    font-size: 1.125rem; /* slightly larger font for this paragraph */
+    line-height: 1.8;
   }
 
   .about-containers {
@@ -444,9 +450,25 @@ a:hover { /*link element styling when hovering */
 
   }
 
+  /* Layout: timeline on the left, text on the right */
   .about-details-container {
-    justify-content: center;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  /* Ensure the timeline column sits left and the prose column on the right */
+  .about-containers {
+    order: 1; /* left column visually (we will use order to place it before the text) */
+    flex: 0 0 50%;
+  }
+
+  .text-container {
+    order: 2; /* place text on the right */
+    flex: 0 0 50%;
   }
 
   .about-containers,
@@ -522,9 +544,19 @@ a:hover { /*link element styling when hovering */
       margin: 0 2rem;
     }
 
+    /* Mobile: stack and restore source order for accessibility */
     .about-details-container {
       flex-direction: column;
       align-items: stretch;
+    }
+
+    .about-containers {
+      order: 0;
+      flex: none;
+    }
+
+    .text-container {
+      order: 0;
     }
 
     .about-containers {
@@ -583,12 +615,6 @@ a:hover { /*link element styling when hovering */
     justify-content: space-around;
   }
 
-  article {
-    display: flex;
-    width: 10rem;
-    justify-content: space-around;
-    gap: 0.5rem;
-  }
 
   article .icon {
     cursor: default;
@@ -863,6 +889,7 @@ a:hover { /*link element styling when hovering */
   color: white;
   border: none;
 }
+
 
 .contact-card .btn:hover {
   transform: translateY(-3px);
