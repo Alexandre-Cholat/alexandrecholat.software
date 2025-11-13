@@ -105,21 +105,13 @@
     <section id="about">
       <p class="section__text__p1">Get to Know More</p>
       <h1 class="title">About Me</h1>
+
+      
+
       <div class="section-container">
         <div class="about-details-container">
           <div class="text-container">
-            <!-- <p>
-              Hi! I'm an Engineer and Saas Founder with hands-on experience building and deploying <b>deep learning</b> software
-              applications leveraging <b>LLMs</b>. 
-              <br />
-              <br />
-              I combine
-              rigorous technical foundations with product thinking to deliver AI
-              solutions that create quantified business value.
-              <br />
-              <br /> 
-              Please feel free to explore my projects and get in touch!
-            </p>-->
+            
 
             <p> 
             Hi! I’m an <b> Engineer and Founder</b> specializing in building 
@@ -128,8 +120,8 @@
             <br /><br />
 
               As a <b>business-oriented </b>entrepreneur , 
-      I can lead agile teams, pitch complex ideas to both technical audiences and decision makers, and focus on driving <b>measurable impact and growth</b>.
-      <br /><br />
+              I can lead agile teams, pitch complex ideas to both technical audiences and decision makers, and focus on driving <b>measurable impact and growth</b>.
+              <br /><br />
             Explore my projects and let’s connect!
             </p>
 
@@ -197,6 +189,7 @@
           </div>
         </div>
       </div>
+      
       <img
         src="../static/assets/arrow.png"
         alt="arrow icon"
@@ -434,7 +427,7 @@
             <h3 class="project-name">AI RAG Sales Agent</h3>
             <p class="project-desc">
               <!-- Built a RAG-based sales agent driving <b>5.86% worker productivity gain</b>. Prompt engineered for RAG
-, fusing few-shot, CoT, prompt chaining techniques to structure outputs, integrated POC into existing workflows. -->
+              , fusing few-shot, CoT, prompt chaining techniques to structure outputs, integrated POC into existing workflows. -->
 
 
                 Developed an LLM sales Agent, driving 
@@ -550,6 +543,8 @@
       />
     </section>
 
+    
+
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
@@ -627,16 +622,55 @@
       </div>
     </section> -->
     <footer>
-      <nav>
+
+      <div class="logo-bar-container">
+        <img
+          src="../static/assets/France 2030 500x500.png"
+          alt="France 2030 logo"
+          class="logo-bar-icon"
+        />
+        <img
+          src="../static/assets/MIAI-cluster-logo.png"
+          alt="MIAI cluster logo"
+          class="logo-bar-icon"
+        />
+        <img
+          src="../static/assets/CNRS-logo.png"
+          alt="CNRS logo"
+          class="logo-bar-icon"
+        />
+      </div>
+      <style>
+        .logo-bar-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          margin: 20px 0;
+        }
+
+        .logo-bar-icon {
+          width: 100px;
+          height: 100px;
+          object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+          .logo-bar-container {
+        flex-wrap: wrap;
+          }
+        }
+      </style>
+
+      <!-- <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Project</a></li>
-            <!-- <li><a href="#contact">Contact</a></li> -->
           </ul>
         </div>
-      </nav>
+      </nav> -->
       <p>Copyright &#169; 2026 Alexandre Cholat. All Rights Reserved.</p>
     </footer>
     <script src="/static/script.js"></script>
